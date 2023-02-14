@@ -1,0 +1,8 @@
+#line 1 "/Users/machina/Developer/temperature_data_logger/.vscode/arduino.json"
+{
+    "sketch": "temperature_data_logger.ino",
+    "output": "build",
+    "board": "arduino:avr:uno",
+    "port": "/dev/tty.usbmodem1301",
+    "programmer": "avrisp"
+}

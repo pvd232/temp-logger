@@ -1,0 +1,87 @@
+[
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "/Users/machina/Library/Arduino15/packages/arduino/hardware/avr/1.8.6/cores/arduino"
+  },
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "/Users/machina/Library/Arduino15/packages/arduino/hardware/avr/1.8.6/variants/standard"
+  },
+  {
+    "Sourcefile": "/Users/machina/Developer/temperature_data_logger/build/sketch/temperature_data_logger.ino.cpp",
+    "Include": "OneWire.h",
+    "Includepath": "/Users/machina/Documents/Arduino/libraries/OneWire"
+  },
+  {
+    "Sourcefile": "/Users/machina/Developer/temperature_data_logger/build/sketch/temperature_data_logger.ino.cpp",
+    "Include": "DallasTemperature.h",
+    "Includepath": "/Users/machina/Documents/Arduino/libraries/MAX31850_DallasTemp"
+  },
+  {
+    "Sourcefile": "/Users/machina/Developer/temperature_data_logger/build/sketch/temperature_data_logger.ino.cpp",
+    "Include": "SD.h",
+    "Includepath": "/Users/machina/Documents/Arduino/libraries/SD/src"
+  },
+  {
+    "Sourcefile": "/Users/machina/Developer/temperature_data_logger/build/sketch/temperature_data_logger.ino.cpp",
+    "Include": "LowPower.h",
+    "Includepath": "/Users/machina/Documents/Arduino/libraries/Low-Power"
+  },
+  {
+    "Sourcefile": "/Users/machina/Developer/temperature_data_logger/build/sketch/temperature_data_logger.ino.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/machina/Documents/Arduino/libraries/OneWire/OneWire.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/machina/Documents/Arduino/libraries/MAX31850_DallasTemp/DallasTemperature.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/machina/Documents/Arduino/libraries/SD/src/File.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/machina/Documents/Arduino/libraries/SD/src/SD.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/machina/Documents/Arduino/libraries/SD/src/utility/Sd2Card.cpp",
+    "Include": "SPI.h",
+    "Includepath": "/Users/machina/Library/Arduino15/packages/arduino/hardware/avr/1.8.6/libraries/SPI/src"
+  },
+  {
+    "Sourcefile": "/Users/machina/Documents/Arduino/libraries/SD/src/utility/Sd2Card.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/machina/Documents/Arduino/libraries/SD/src/utility/SdFile.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/machina/Documents/Arduino/libraries/SD/src/utility/SdVolume.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/machina/Documents/Arduino/libraries/Low-Power/LowPower.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/machina/Library/Arduino15/packages/arduino/hardware/avr/1.8.6/libraries/SPI/src/SPI.cpp",
+    "Include": "",
+    "Includepath": null
+  }
+]
