@@ -16,6 +16,10 @@ def parse_sd_data(file_name) -> None:
         over_forty_time: Literal[False] = False
         over_fifty_time: Literal[False] = False
         over_sixty_time: Literal[False] = False
+        cleared_forty: Literal[False] = False
+        cleared_fifty: Literal[False] = False
+        cleared_sixty: Literal[False] = False
+
         time_counter: Literal[0] = 0
         prev: Literal[0] = 0
         for i in range(len(data)):
@@ -29,43 +33,63 @@ def parse_sd_data(file_name) -> None:
             time_stamp: datetime = start_time + \
                 timedelta(minutes=time_counter * 10)
 
-            if temp >= 41 and temp <= 43 and temp > prev and not over_forty_time:
-                over_forty_time = time_stamp
+            if temp <= 43:
+                cleared_forty = True
+                if temp >= 41 and temp > prev and not over_forty_time:
+                    over_forty_time = time_stamp
 
-            if temp >= 51 and temp <= 53 and temp > prev and not over_fifty_time:
-                over_fifty_time = time_stamp
+            if temp <= 53:
+                cleared_fifty = True
+                if temp >= 51 and temp > prev and not over_fifty_time:
+                    over_fifty_time = time_stamp
 
-            if temp >= 60 and temp <= 63 and temp > prev and not over_sixty_time:
-                over_sixty_time = time_stamp
+            if temp <= 63:
+                cleared_sixty = True
+                if temp >= 60 and temp > prev and not over_sixty_time:
+                    over_sixty_time = time_stamp
 
             prev = temp
             temp_data[time_stamp] = temp
             temp_logs.append(temp_data)
 
-        time_under_forty: datetime = over_forty_time - start_time
-
         print()
         runtime: datetime = list(
             temp_logs[len(temp_logs)-1].keys())[0] - start_time
 
+        if over_forty_time:
+            time_under_forty: datetime = over_forty_time - start_time
+        else:
+            if cleared_forty:
+                time_under_forty = runtime
+            else:
+                time_under_forty = 0
+
         if over_fifty_time:
             time_under_fifty: datetime = over_fifty_time - start_time
         else:
-            time_under_fifty = runtime
+            if cleared_fifty:
+                time_under_fifty = runtime
+            else:
+                time_under_fifty = 0
 
         if over_sixty_time:
             time_under_sixty: datetime = over_sixty_time - start_time
         else:
-            time_under_sixty = runtime
+            if cleared_sixty:
+                time_under_sixty = runtime
+            else:
+                time_under_sixty = 0
 
-        print('runtime', runtime)
+        print('>>>>>>>>>>>>>>>>')
         print()
-        print('Date of Test:', start_time.date())
+        print('RUNTIME >', runtime)
         print()
-        print("Results:")
+        print('TEST DATE >', start_time.date())
+        print()
+        print(f"RESULTS FOR {file_name}:")
         print()
         print('< 41°F:', time_under_forty, ","
-              '<= 51°F:', time_under_fifty, "<=60°F", time_under_sixty)
+              '< 51°F:', time_under_fifty, "< 60°F", time_under_sixty)
         print()
 
 
@@ -80,3 +104,8 @@ parse_sd_data("1-18.TXT")
 parse_sd_data("1-19.TXT")
 parse_sd_data("2-3-no_insulation.TXT")
 parse_sd_data("2-3-insulation.TXT")
+parse_sd_data("2-13-ABC_Supply_Double.TXT")
+parse_sd_data("2-13-2x_AMZ_Supply_Single.TXT")
+parse_sd_data("2-19-D-Wall.TXT")
+parse_sd_data("2-19-D-Wall-2.TXT")
+parse_sd_data("3-2-ABC-D-Wall-Brick.TXT")

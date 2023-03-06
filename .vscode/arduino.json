@@ -1,7 +1,8 @@
 {
     "sketch": "temperature_data_logger.ino",
     "output": "build",
-    "board": "arduino:avr:uno",
-    "port": "/dev/tty.usbmodem1301",
-    "programmer": "avrisp"
+    "board": "arduino:avr:nano",
+    "port": "/dev/tty.wchusbserial1140",
+    "programmer": "avrisp",
+    "configuration": "cpu=atmega328"
 }

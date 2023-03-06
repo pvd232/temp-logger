@@ -17,20 +17,22 @@
 // Data wire is connecting to the Arduino digital pin 2
 
 
-// // Pin 10 on Arduino Uno
+// Pin 10 on Arduino Uno
 
+
+// Set the baud rate for serial communication (9600 is the standard for most Arduino boards)
 
 // Setup a oneWire instance to communicate with any OneWire devices
 OneWire oneWire(2);
-// Pass our oneWire reference to Dallas Temperature sensor
+// Pass our oneWire pointer to Dallas Temperature sensor
 DallasTemperature sensors(&oneWire);
 
 // initialize file for SD card to write to
 File sdcard_file;
 void setup(void)
 {
-  // Start serial communication for debugging purposes
-  Serial.begin(115200);
+  //
+  Serial.begin(9600);
 
   // Declare input for SD card
   pinMode(2, 0x0);
@@ -66,22 +68,21 @@ void loop(void)
   Serial.println(sensors.getTempFByIndex(0));
   sdcard_file = SD.open("data.txt", (O_READ | O_WRITE | O_CREAT | O_APPEND));
 
-  // uncomment to wipe previous temperature values
   if (sdcard_file)
   {
     sdcard_file.print(millis());
     sdcard_file.print(",");
 
     sdcard_file.println(sensors.getTempFByIndex(0));
-    sdcard_file.close(); // close the file
+    sdcard_file.close(); // Close the file
   }
   // If the file didn't open, print an error:
   else
   {
     Serial.println("error opening data.txt");
   }
-  // Run program every 10 minutes
-  for (int i = 0; i < 74; i++)
+  // Run program every minute
+  for (int i = 0; i < 7; i++)
   {
     LowPower.idle(SLEEP_8S, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, SPI_OFF, USART0_OFF, TWI_OFF);
   }

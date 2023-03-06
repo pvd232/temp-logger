@@ -3,7 +3,7 @@
   "builtInToolsFolders": "",
   "compiler.optimization_flags": "",
   "customBuildProperties": "",
-  "fqbn": "arduino:avr:uno",
+  "fqbn": "arduino:avr:nano:cpu=atmega328",
   "hardwareFolders": "/Users/machina/Library/Arduino15/packages",
   "otherLibrariesFolders": "/Users/machina/Documents/Arduino/libraries",
   "runtime.ide.version": "10607",
